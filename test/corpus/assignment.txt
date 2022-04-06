@@ -1,0 +1,18 @@
+====
+Assignment
+====
+
+main() {
+  foo = 42;
+}
+
+----
+
+(source_file
+  (function_definition
+    (identifier)
+    (parameter_list)
+    (block
+      (assignment_statement
+        (identifier)
+        (number)))))

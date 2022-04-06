@@ -1,0 +1,15 @@
+{
+  "name": "tree-sitter-dart",
+  "version": "0.1.0",
+  "description": "Tree-Sitter Grammar for Dart.",
+  "main": "grammar.js",
+  "scripts": {
+    "generate": "tree-sitter generate",
+    "test": "tree-sitter test"
+  },
+  "author": "The Dart project authors",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "tree-sitter-cli": "^0.20.6"
+  }
+}
