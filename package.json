@@ -11,5 +11,8 @@
   "license": "BSD-3-Clause",
   "devDependencies": {
     "tree-sitter-cli": "^0.20.6"
+  },
+  "dependencies": {
+    "nan": "^2.15.0"
   }
 }
