@@ -1,9 +1,9 @@
 ================================================================================
-Assignment
+Function declaration
 ================================================================================
 
 main() {
-  foo = 42;
+  local() {}
 }
 
 --------------------------------------------------------------------------------
@@ -14,6 +14,7 @@ main() {
       (identifier)
       (parameter_list)
       (block
-        (assignment_statement
+        (function_declaration
           (identifier)
-          (number))))))
+          (parameter_list)
+          (block))))))

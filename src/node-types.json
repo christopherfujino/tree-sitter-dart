@@ -29,12 +29,31 @@
         {
           "type": "assignment_statement",
           "named": true
+        },
+        {
+          "type": "function_declaration",
+          "named": true
         }
       ]
     }
   },
   {
-    "type": "function_definition",
+    "type": "declaration",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "function_declaration",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "function_declaration",
     "named": true,
     "fields": {},
     "children": {
@@ -70,7 +89,7 @@
       "required": false,
       "types": [
         {
-          "type": "function_definition",
+          "type": "declaration",
           "named": true
         }
       ]
