@@ -5,7 +5,8 @@
   "main": "grammar.js",
   "scripts": {
     "generate": "tree-sitter generate",
-    "test": "tree-sitter test"
+    "test": "tree-sitter generate && tree-sitter test",
+    "test-update": "tree-sitter generate && tree-sitter test --update"
   },
   "author": "The Dart project authors",
   "license": "BSD-3-Clause",

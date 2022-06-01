@@ -9,13 +9,13 @@ module.exports = grammar({
   word: $ => $.identifier,
 
   rules: {
-    source_file: $ => repeat($._definition),
+    source_file: $ => repeat($.declaration),
 
-    _definition: $ => choice(
-      $.function_definition,
+    declaration: $ => choice(
+      $.function_declaration,
     ),
 
-    function_definition: $ => seq(
+    function_declaration: $ => seq(
       // optional return type
       $.identifier,
       $.parameter_list,
@@ -36,6 +36,8 @@ module.exports = grammar({
 
     _statement: $ => choice(
       seq($.assignment_statement, ";"),
+      // local function def
+      $.function_declaration,
     ),
 
     assignment_statement: $ => seq(
