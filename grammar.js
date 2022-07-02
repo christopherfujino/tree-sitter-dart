@@ -8,6 +8,11 @@ module.exports = grammar({
   // https://tree-sitter.github.io/tree-sitter/creating-parsers#keyword-extraction
   word: $ => $.identifier,
 
+  extras: $ => [
+    $.comment,
+    // whitespace is not semantically meaningful
+    /\s/,
+  ],
   rules: {
     source_file: $ => repeat($.declaration),
 
@@ -15,11 +20,20 @@ module.exports = grammar({
       $.function_declaration,
     ),
 
+    _type: $ => choice(
+      $.primitive_type,
+    ),
+
+    primitive_type: $ => choice(
+      "void",
+      "int",
+    ),
+
     function_declaration: $ => seq(
-      // optional return type
-      $.identifier,
-      $.parameter_list,
-      $.block,
+      optional(field("return_type", $._type)),
+      field("name", $.identifier),
+      field("parameter_list", $.parameter_list),
+      field("body", $.block),
     ),
 
     parameter_list: _$ => seq(
@@ -41,7 +55,7 @@ module.exports = grammar({
     ),
 
     assignment_statement: $ => seq(
-      // optional type
+      optional($._type),
       $.identifier,
       "=",
       $._expression,
@@ -61,5 +75,7 @@ module.exports = grammar({
 
     // Dart spec 17.38
     identifier: _$ => /[$a-zA-Z_][a-zA-Z_\d]*/,
+
+    comment: $ => seq("//", /.*/),
   }
 });
