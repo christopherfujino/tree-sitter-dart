@@ -4,8 +4,9 @@
   "description": "Tree-Sitter Grammar for Dart.",
   "main": "grammar.js",
   "scripts": {
-    "generate": "tree-sitter generate",
-    "test": "tree-sitter generate && tree-sitter test",
+    "generate": "tree-sitter generate --abi=latest",
+    "generate-verbose": "tree-sitter generate --abi=latest --log",
+    "test": "tree-sitter generate --abi=latest && tree-sitter test",
     "test-update": "tree-sitter generate && tree-sitter test --update"
   },
   "author": "The Dart project authors",
@@ -15,5 +16,16 @@
   },
   "dependencies": {
     "nan": "^2.15.0"
-  }
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.dart",
+      "file-types": [
+        "dart"
+      ],
+      "highlights": [
+        "queries/highlights.scm"
+      ]
+    }
+  ]
 }

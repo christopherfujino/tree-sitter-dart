@@ -14,6 +14,10 @@
         {
           "type": "number",
           "named": true
+        },
+        {
+          "type": "primitive_type",
+          "named": true
         }
       ]
     }
@@ -38,6 +42,11 @@
     }
   },
   {
+    "type": "comment",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "declaration",
     "named": true,
     "fields": {},
@@ -55,28 +64,56 @@
   {
     "type": "function_declaration",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "block",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "parameter_list",
-          "named": true
-        }
-      ]
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "block",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "parameter_list": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "parameter_list",
+            "named": true
+          }
+        ]
+      },
+      "return_type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "primitive_type",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
     "type": "parameter_list",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "primitive_type",
     "named": true,
     "fields": {}
   },
@@ -104,6 +141,10 @@
     "named": false
   },
   {
+    "type": "//",
+    "named": false
+  },
+  {
     "type": ";",
     "named": false
   },
@@ -116,8 +157,16 @@
     "named": true
   },
   {
+    "type": "int",
+    "named": false
+  },
+  {
     "type": "number",
     "named": true
+  },
+  {
+    "type": "void",
+    "named": false
   },
   {
     "type": "{",

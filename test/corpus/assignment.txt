@@ -1,9 +1,9 @@
 ================================================================================
-Assignment
+Assignment to primitive type
 ================================================================================
 
-main() {
-  foo = 42;
+void main() {
+  int foo = 42;
 }
 
 --------------------------------------------------------------------------------
@@ -11,9 +11,11 @@ main() {
 (source_file
   (declaration
     (function_declaration
+      (primitive_type)
       (identifier)
       (parameter_list)
       (block
         (assignment_statement
+          (primitive_type)
           (identifier)
           (number))))))
